@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translator - Indonesia, English, Mandarin</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-language"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Translator App By Den</h1>
+                    <p class="tagline">For Education & Learn</p>
+                </div>
+            </div>
+            
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </header>
+
+        <!-- Main App -->
+        <main class="main-content">
+            <!-- Language Selection -->
+            <div class="language-selector">
+                <div class="lang-box">
+                    <label class="lang-label">From</label>
+                    <div class="lang-select-wrapper">
+                        <select id="from-lang" class="lang-select">
+                            <option value="id">🇮🇩 Indonesian</option>
+                            <option value="en">🇺🇸 English</option>
+                            <option value="zh">🇨🇳 Mandarin</option>
+                        </select>
+                        <i class="fas fa-chevron-down select-icon"></i>
+                    </div>
+                </div>
+                
+                <button id="swap-btn" class="swap-btn" title="Swap Languages">
+                    <i class="fas fa-exchange-alt"></i>
+                </button>
+                
+                <div class="lang-box">
+                    <label class="lang-label">To</label>
+                    <div class="lang-select-wrapper">
+                        <select id="to-lang" class="lang-select">
+                            <option value="en">🇺🇸 English</option>
+                            <option value="zh">🇨🇳 Mandarin</option>
+                            <option value="id">🇮🇩 Indonesian</option>
+                        </select>
+                        <i class="fas fa-chevron-down select-icon"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text Input Area -->
+            <div class="text-input-area">
+                <div class="input-header">
+                    <h3><i class="fas fa-keyboard"></i> Input Text</h3>
+                    <div class="char-count-wrapper">
+                        <span id="char-count">0</span>/500
+                    </div>
+                </div>
+                
+                <div class="textarea-wrapper">
+                    <textarea id="input-text" placeholder="Type or paste text here... Example: Hello, how are you?" rows="5"></textarea>
+                    <div class="textarea-actions">
+                        <button id="voice-input-btn" class="action-btn" title="Voice Input">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                        <button id="clear-btn" class="action-btn" title="Clear">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="language-hint">
+                    <i class="fas fa-info-circle"></i>
+                    <span id="language-hint-text">Detecting language...</span>
+                </div>
+            </div>
+
+            <!-- Translate Button -->
+            <div class="translate-action">
+                <button id="translate-btn" class="translate-btn">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>Translate Now</span>
+                </button>
+            </div>
+
+            <!-- Output Area -->
+            <div class="text-output-area">
+                <div class="output-header">
+                    <h3><i class="fas fa-globe"></i> Translation Result</h3>
+                    <div class="output-actions">
+                        <button id="copy-btn" class="action-btn small" title="Copy">
+                            <i class="far fa-copy"></i>
+                        </button>
+                        <button id="speak-btn" class="action-btn small" title="Speak">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="output-wrapper">
+                    <div id="output-text" class="output-text">
+                        <div class="output-placeholder">
+                            <i class="fas fa-language"></i>
+                            <p>Translation will appear here</p>
+                        </div>
+                    </div>
+                    
+                    <button id="save-btn" class="save-btn">
+                        <i class="far fa-bookmark"></i>
+                        Save Translation
+                    </button>
+                </div>
+            </div>
+
+        <!-- History Panel (Collapsed by default on mobile) -->
+        <aside class="history-sidebar">
+            <div class="history-header">
+                <h3><i class="fas fa-history"></i> Translation History</h3>
+                <button id="clear-history" class="text-btn">Clear All</button>
+            </div>
+            
+            <div id="history-list" class="history-list">
+                <!-- History items will be loaded here -->
+                <div class="history-empty">
+                    <i class="fas fa-history"></i>
+                    <p>No translation history yet</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Mobile Bottom Navigation -->
+        <nav class="mobile-nav">
+            <button class="nav-btn active" data-section="translate">
+                <i class="fas fa-language"></i>
+                <span>Translate</span>
+            </button>
+            <button class="nav-btn" data-section="history">
+                <i class="fas fa-history"></i>
+                <span>History</span>
+            </button>
+            <button class="nav-btn" data-section="settings">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </button>
+        </nav>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Translator &copy; 2026 | Indonesia • English • Mandarin</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/translate.js"></script>
+    <script src="assets/js/voice.js"></script>
+</body>
+</html>
